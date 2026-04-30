@@ -21,9 +21,9 @@
 	<header class="sticky top-0 z-50 w-full shadow-lg" 
 		style="background: linear-gradient(90deg, #007A7A 0%, #005F5F 100%);">
 		
-		<nav class="w-full flex items-center justify-between px-4 py-3 relative z-10">
+		<nav class="w-full flex items-center px-6 py-6 relative z-10">
 			<!-- Logo & Branding -->
-			<div class="flex items-center gap-4">
+			<div class="flex items-center gap-4 flex-1">
 				<img src="https://upload.wikimedia.org/wikipedia/commons/9/97/Logo_PLN.png" alt="PLN Logo" class="h-10 w-auto filter drop-shadow-sm">
 				<div class="h-8 w-px bg-white/20"></div>
 				<div>
@@ -33,7 +33,7 @@
 			</div>
 
 			<!-- Navigation Links -->
-			<div class="flex items-center gap-1">
+			<div class="flex items-center gap-1 justify-center">
 				{#each navItems as item}
 					{@const Icon = item.icon}
 					<a 
@@ -52,12 +52,8 @@
 				{/each}
 			</div>
 
-			<!-- User Indicator -->
-			<div class="flex items-center gap-3 pl-4 border-l border-white/20">
-				<div class="w-9 h-9 bg-white/10 rounded-xl border border-white/10 flex items-center justify-center text-white font-black text-xs uppercase">
-					AD
-				</div>
-			</div>
+			<!-- Empty Right Section for centering -->
+			<div class="flex-1"></div>
 		</nav>
 	</header>
 

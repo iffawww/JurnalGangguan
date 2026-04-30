@@ -73,14 +73,14 @@ export const actions = {
             
             const ulp = formData.get('ulp') as string;
             const gi = formData.get('gi') as string;
-            const penyulang = formData.get('penyulang') as string;
-            const nama_proteksi = formData.get('nama_proteksi') as string;
-            const kode_j = formData.get('kode_j') as string;
+            const penyulang = (formData.get('penyulang') as string)?.toUpperCase() || '';
+            const nama_proteksi = (formData.get('nama_proteksi') as string)?.toUpperCase() || '';
+            const kode_j = (formData.get('kode_j') as string)?.toUpperCase() || '';
             const tgl_trip = formData.get('tgl_trip') as string;
-            const rele_kerja = formData.get('rele_kerja') as string;
+            const rele_kerja = (formData.get('rele_kerja') as string)?.toUpperCase() || '';
             const cuaca = formData.get('cuaca') as string;
             const status_tp = formData.get('status_tp') as string;
-            const keterangan = formData.get('keterangan') as string;
+            const keterangan = (formData.get('keterangan') as string)?.toUpperCase() || '';
 
             await db.update(jurnalGangguan).set({
                 ulp,

@@ -78,11 +78,12 @@
               <tr>
                 <th class="border border-slate-300 p-2 text-center w-8">No</th>
                 <th class="border border-slate-300 p-2">ULP</th>
-                <th class="border border-slate-300 p-2">GI / Penyulang</th>
+                <th class="border border-slate-300 p-2">GI</th>
+                <th class="border border-slate-300 p-2">Penyulang</th>
                 <th class="border border-slate-300 p-2">Proteksi / Kode J</th>
                 <th class="border border-slate-300 p-2">Rele Kerja</th>
                 <th class="border border-slate-300 p-2">Cuaca</th>
-                <th class="border border-slate-300 p-2 w-16">T/P</th>
+                <th class="border border-slate-300 p-2 w-16">P/T</th>
                 <th class="border border-slate-300 p-2">Keterangan</th>
               </tr>
             </thead>
@@ -91,17 +92,15 @@
                 <tr class="hover:bg-slate-50 transition-colors">
                   <td class="border border-slate-300 p-2 text-center font-bold">{item.no_urut}</td>
                   <td class="border border-slate-300 p-2">{item.ulp}</td>
+                  <td class="border border-slate-300 p-2 font-semibold">{item.gi}</td>
+                  <td class="border border-slate-300 p-2 text-slate-700">{item.penyulang}</td>
                   <td class="border border-slate-300 p-2">
-                    <span class="block font-semibold">{item.gi}</span>
-                    <span class="block text-slate-500">{item.penyulang}</span>
-                  </td>
-                  <td class="border border-slate-300 p-2">
-                    <span class="block">{item.nama_proteksi}</span>
+                    <span class="block {item.nama_proteksi === 'PMT' ? 'text-red-600 font-bold' : ''}">{item.nama_proteksi}</span>
                     <span class="block text-slate-500">{item.kode_j}</span>
                   </td>
                   <td class="border border-slate-300 p-2">{item.rele_kerja}</td>
                   <td class="border border-slate-300 p-2">{item.cuaca}</td>
-                  <td class="border border-slate-300 p-2 font-semibold {item.status_tp === 'Trip' ? 'text-red-600' : 'text-slate-800'}">
+                  <td class="border border-slate-300 p-2 font-semibold {item.status_tp === 'Temporer' ? 'text-yellow-600' : 'text-red-600'}">
                     {item.status_tp}
                   </td>
                   <td class="border border-slate-300 p-2">{item.keterangan || '-'}</td>

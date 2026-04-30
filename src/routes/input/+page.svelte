@@ -149,17 +149,17 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div>
           <label for="penyulang" class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1">Nama Penyulang</label>
-          <input type="text" name="penyulang" id="penyulang" placeholder="Contoh: Birem" required class="block w-full rounded-2xl bg-white border-slate-200 text-slate-800 shadow-sm focus:border-pln-teal focus:ring-4 focus:ring-pln-teal/10 p-4 transition-all outline-none font-bold">
+          <input type="text" name="penyulang" id="penyulang" placeholder="Contoh: Birem" required class="block w-full rounded-2xl bg-white border-slate-200 text-slate-800 shadow-sm focus:border-pln-teal focus:ring-4 focus:ring-pln-teal/10 p-4 transition-all outline-none font-bold uppercase">
         </div>
 
         <div>
           <label for="nama_proteksi" class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1">Alat Proteksi</label>
-          <input type="text" name="nama_proteksi" id="nama_proteksi" placeholder="Contoh: REC, PMT, PMCB" required class="block w-full rounded-2xl bg-white border-slate-200 text-slate-800 shadow-sm focus:border-pln-teal focus:ring-4 focus:ring-pln-teal/10 p-4 transition-all outline-none font-bold">
+          <input type="text" name="nama_proteksi" id="nama_proteksi" placeholder="Contoh: REC, PMT, PMCB" required class="block w-full rounded-2xl bg-white border-slate-200 text-slate-800 shadow-sm focus:border-pln-teal focus:ring-4 focus:ring-pln-teal/10 p-4 transition-all outline-none font-bold uppercase">
         </div>
 
         <div>
           <label for="kode_j" class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1">ID Kode J</label>
-          <input type="text" name="kode_j" id="kode_j" placeholder="Masukkan Kode J" required class="block w-full rounded-2xl bg-white border-slate-200 text-slate-800 shadow-sm focus:border-pln-teal focus:ring-4 focus:ring-pln-teal/10 p-4 transition-all outline-none font-bold">
+          <input type="text" name="kode_j" id="kode_j" placeholder="Masukkan Kode J" required class="block w-full rounded-2xl bg-white border-slate-200 text-slate-800 shadow-sm focus:border-pln-teal focus:ring-4 focus:ring-pln-teal/10 p-4 transition-all outline-none font-bold uppercase">
         </div>
 
         <div>
@@ -169,7 +169,7 @@
 
         <div>
           <label for="rele_kerja" class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1">Rele Kerja</label>
-          <input type="text" name="rele_kerja" id="rele_kerja" placeholder="Contoh: OCR, DGR" required class="block w-full rounded-2xl bg-white border-slate-200 text-slate-800 shadow-sm focus:border-pln-teal focus:ring-4 focus:ring-pln-teal/10 p-4 transition-all outline-none font-bold">
+          <input type="text" name="rele_kerja" id="rele_kerja" placeholder="Contoh: OCR, DGR" required class="block w-full rounded-2xl bg-white border-slate-200 text-slate-800 shadow-sm focus:border-pln-teal focus:ring-4 focus:ring-pln-teal/10 p-4 transition-all outline-none font-bold uppercase">
         </div>
 
         <div class="grid grid-cols-2 gap-4">
@@ -186,7 +186,7 @@
             <label for="status_tp" class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1">Status</label>
             <select name="status_tp" id="status_tp" required class="block w-full rounded-2xl bg-white border-slate-200 text-slate-800 shadow-sm focus:border-pln-teal focus:ring-4 focus:ring-pln-teal/10 p-4 transition-all outline-none font-bold text-center">
               <option value="Permanent">Permanent</option>
-              <option value="Temporer">Trip</option>
+              <option value="Temporer">Temporer</option>
             </select>
           </div>
         </div>
@@ -203,7 +203,7 @@
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div>
           <label for="keterangan" class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2 ml-1">Detail Keterangan Penyebab</label>
-          <textarea id="keterangan" name="keterangan" rows="6" placeholder="Masukkan keterangan detail penyebab gangguan (misal: Pohon tumbang menimpa kabel)..." class="block w-full rounded-3xl bg-white border-slate-200 text-slate-800 shadow-sm focus:border-pln-teal focus:ring-4 focus:ring-pln-teal/10 p-6 transition-all outline-none font-medium leading-relaxed"></textarea>
+          <textarea id="keterangan" name="keterangan" rows="6" placeholder="Masukkan keterangan detail penyebab gangguan (misal: Pohon tumbang menimpa kabel)..." class="block w-full rounded-3xl bg-white border-slate-200 text-slate-800 shadow-sm focus:border-pln-teal focus:ring-4 focus:ring-pln-teal/10 p-6 transition-all outline-none font-medium leading-relaxed uppercase"></textarea>
         </div>
 
         <div class="space-y-6">

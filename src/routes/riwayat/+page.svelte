@@ -199,30 +199,32 @@
           <th class="p-4 border-r border-white/10 text-center">TGL Trip</th>
           <th class="p-4 border-r border-white/10 text-center">Rele Kerja</th>
           <th class="p-4 border-r border-white/10 text-center">Cuaca</th>
-          <th class="p-4 border-r border-white/10 text-center">T/P</th>
+          <th class="p-4 border-r border-white/10 text-center">P/T</th>
           <th class="p-4 border-r border-white/10">Keterangan</th>
           <th class="p-4 text-center bg-[#007a7a]">Eviden Foto</th>
           <th class="p-4 text-center">Aksi</th>
         </tr>
       </thead>
       <tbody class="divide-y divide-slate-100 text-slate-600 font-medium">
-        {#each filteredRiwayat as item}
+        {#each filteredRiwayat as item, index}
           <tr class="hover:bg-slate-50/80 transition-colors">
-            <td class="px-3 py-4 text-center font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100">{item.no_urut}</td>
+            <td class="px-3 py-4 text-center font-bold text-slate-400 bg-slate-50/30 border-r border-slate-100">{index + 1}</td>
             <td class="px-3 py-4 text-center border-r border-slate-100">{item.ulp}</td>
             <td class="px-3 py-4 text-center font-bold text-slate-800 border-r border-slate-100 whitespace-nowrap">{item.gi}</td>
             <td class="px-3 py-4 text-center font-bold text-pln-teal border-r border-slate-100">{item.penyulang}</td>
-            <td class="px-3 py-4 text-center border-r border-slate-100">{item.nama_proteksi}</td>
+            <td class="px-3 py-4 text-center border-r border-slate-100 {item.nama_proteksi === 'PMT' ? 'text-red-500 font-bold' : ''}">{item.nama_proteksi}</td>
             <td class="px-3 py-4 text-center text-[10px] opacity-70 border-r border-slate-100 font-mono">{item.kode_j}</td>
             <td class="px-3 py-4 text-center border-r border-slate-100 whitespace-nowrap">{item.tgl_trip}</td>
             <td class="px-3 py-4 text-center border-r border-slate-100">{item.rele_kerja}</td>
             <td class="px-3 py-4 text-center border-r border-slate-100 uppercase tracking-tighter text-[9px] font-black">{item.cuaca}</td>
             <td class="px-3 py-4 text-center border-r border-slate-100">
-              <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[9px] font-black uppercase {item.status_tp === 'Temporer' ? 'bg-red-50 text-red-500' : 'bg-green-50 text-green-500'}">
-                {item.status_tp === 'Permanent' ? 'Permanent' : 'Trip'}
+              <span class="inline-flex items-center px-2 py-0.5 rounded-md text-[9px] font-black uppercase {item.status_tp === 'Temporer' ? 'bg-yellow-50 text-yellow-600' : 'bg-red-50 text-red-500'}">
+                {item.status_tp === 'Permanent' ? 'Permanent' : 'Temporer'}
               </span>
             </td>
-            <td class="px-4 py-4 leading-relaxed max-w-xs border-r border-slate-100 text-[10px]">{item.keterangan || "-"}</td>
+            <td class="px-4 py-4 max-w-[200px] border-r border-slate-100 text-[10px]">
+              <p class="truncate">{item.keterangan || "-"}</p>
+            </td>
             <td class="px-3 py-4 bg-slate-50/30 border-r border-slate-100">
               <div class="flex items-center justify-center gap-2">
                 {#if item.path_foto_1}
@@ -368,15 +370,15 @@
             </div>
             <div>
               <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Penyulang</label>
-              <input type="text" name="penyulang" bind:value={editData.penyulang} class="w-full rounded-xl bg-slate-50 border-slate-200 p-3 text-sm font-bold text-slate-800 outline-none focus:ring-2 focus:ring-pln-teal/20 focus:border-pln-teal transition-all">
+              <input type="text" name="penyulang" bind:value={editData.penyulang} class="w-full rounded-xl bg-slate-50 border-slate-200 p-3 text-sm font-bold text-slate-800 outline-none focus:ring-2 focus:ring-pln-teal/20 focus:border-pln-teal transition-all uppercase">
             </div>
             <div>
               <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Proteksi</label>
-              <input type="text" name="nama_proteksi" bind:value={editData.nama_proteksi} class="w-full rounded-xl bg-slate-50 border-slate-200 p-3 text-sm font-bold text-slate-800 outline-none focus:ring-2 focus:ring-pln-teal/20 focus:border-pln-teal transition-all">
+              <input type="text" name="nama_proteksi" bind:value={editData.nama_proteksi} class="w-full rounded-xl bg-slate-50 border-slate-200 p-3 text-sm font-bold text-slate-800 outline-none focus:ring-2 focus:ring-pln-teal/20 focus:border-pln-teal transition-all uppercase">
             </div>
             <div>
               <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Kode J</label>
-              <input type="text" name="kode_j" bind:value={editData.kode_j} class="w-full rounded-xl bg-slate-50 border-slate-200 p-3 text-sm font-bold text-slate-800 outline-none focus:ring-2 focus:ring-pln-teal/20 focus:border-pln-teal transition-all">
+              <input type="text" name="kode_j" bind:value={editData.kode_j} class="w-full rounded-xl bg-slate-50 border-slate-200 p-3 text-sm font-bold text-slate-800 outline-none focus:ring-2 focus:ring-pln-teal/20 focus:border-pln-teal transition-all uppercase">
             </div>
             <div>
               <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Tanggal Trip</label>
@@ -384,7 +386,7 @@
             </div>
             <div>
               <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Rele Kerja</label>
-              <input type="text" name="rele_kerja" bind:value={editData.rele_kerja} class="w-full rounded-xl bg-slate-50 border-slate-200 p-3 text-sm font-bold text-slate-800 outline-none focus:ring-2 focus:ring-pln-teal/20 focus:border-pln-teal transition-all">
+              <input type="text" name="rele_kerja" bind:value={editData.rele_kerja} class="w-full rounded-xl bg-slate-50 border-slate-200 p-3 text-sm font-bold text-slate-800 outline-none focus:ring-2 focus:ring-pln-teal/20 focus:border-pln-teal transition-all uppercase">
             </div>
             <div>
               <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Cuaca</label>
@@ -396,7 +398,7 @@
               </select>
             </div>
             <div>
-              <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Status T/P</label>
+              <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Status P/T</label>
               <select name="status_tp" bind:value={editData.status_tp} class="w-full rounded-xl bg-slate-50 border-slate-200 p-3 text-sm font-bold text-slate-800 outline-none focus:ring-2 focus:ring-pln-teal/20 focus:border-pln-teal transition-all">
                 <option value="Permanent">Permanent</option>
                 <option value="Temporer">Temporer</option>
@@ -406,7 +408,7 @@
 
           <div>
             <label class="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-2">Keterangan</label>
-            <textarea name="keterangan" bind:value={editData.keterangan} rows="3" class="w-full rounded-xl bg-slate-50 border-slate-200 p-4 text-sm font-medium text-slate-800 outline-none focus:ring-2 focus:ring-pln-teal/20 focus:border-pln-teal transition-all"></textarea>
+            <textarea name="keterangan" bind:value={editData.keterangan} rows="3" class="w-full rounded-xl bg-slate-50 border-slate-200 p-4 text-sm font-medium text-slate-800 outline-none focus:ring-2 focus:ring-pln-teal/20 focus:border-pln-teal transition-all uppercase"></textarea>
           </div>
 
           <div class="flex justify-end gap-3 pt-6 border-t border-slate-50">
@@ -489,8 +491,8 @@
              <p class="text-xs font-black text-pln-navy uppercase">{viewData.kode_j}</p>
           </div>
           <div>
-             <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Status</p>
-             <p class="text-xs font-black text-pln-navy uppercase">{viewData.status_tp === 'Temporer' ? 'Trip' : 'Permanent'}</p>
+             <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Status P/T</p>
+             <p class="text-xs font-black text-pln-navy uppercase">{viewData.status_tp === 'Temporer' ? 'Temporer' : 'Permanent'}</p>
           </div>
           <div>
              <p class="text-[9px] font-black text-slate-400 uppercase tracking-widest mb-1">Cuaca</p>
